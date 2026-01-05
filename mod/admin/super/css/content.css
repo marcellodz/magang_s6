@@ -1,0 +1,273 @@
+    .btn-add {
+        background: linear-gradient(90deg, #ff0000, #b30000);
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 20px;
+        float: right;
+        transition: 0.3s;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    .btn-add:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(90deg, #ff3333, #cc0000);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+
+    .btn-generate,
+    .btn-download {
+        color: #ff3b3b;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 6px 10px;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+
+    .btn-generate:hover,
+    .btn-download:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+
+    /* Action buttons */
+    .btn-action {
+        border: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 0 3px;
+        transition: 0.25s;
+        font-size: 15px;
+    }
+
+    .btn-action.edit {
+        background: rgba(0, 128, 255, 0.15);
+        color: #00aaff;
+    }
+
+    .btn-action.delete {
+        background: rgba(255, 0, 0, 0.15);
+        color: #ff4d4d;
+    }
+
+    .btn-action:hover {
+        transform: scale(1.08);
+    }
+
+    /* Role badges */
+    .role-badge {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .role-badge.superadmin {
+        background: rgba(0, 255, 136, 0.15);
+        color: #00ff88;
+        border: 1px solid rgba(0, 255, 136, 0.4);
+    }
+
+    .role-badge.staff {
+        background: rgba(150, 150, 150, 0.15);
+        color: #ccc;
+        border: 1px solid rgba(180, 180, 180, 0.3);
+    }
+
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        color: #fff;
+        margin-top: 10px;
+    }
+
+    thead {
+        background: rgba(255, 0, 0, 0.25);
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* === FILTER UI (Kegiatan Peserta) === */
+    .filter-container {
+        margin: 25px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0.2), rgba(40, 0, 0, 0.1));
+        border: 1px solid rgba(255, 0, 0, 0.3);
+        box-shadow: 0 0 14px rgba(255, 0, 0, 0.2);
+    }
+
+    .filter-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #ff4d4d;
+        white-space: nowrap;
+    }
+
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .filter-group label {
+        font-size: 13px;
+        color: #bbb;
+        font-weight: 500;
+        margin-left: 4px;
+    }
+
+    .filter-group select {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 0, 0, 0.3);
+        background: #111;
+        color: #fff;
+        font-size: 14px;
+        min-width: 160px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .filter-group select:hover {
+        border-color: #ff3333;
+        background: #1a1a1a;
+        box-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
+    }
+
+    .filter-group select:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Tombol Filter */
+    .btn-filter {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #ff0000, #b30000);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+    }
+
+    .btn-filter:hover {
+        transform: translateY(-1px);
+        background: linear-gradient(90deg, #ff3333, #990000);
+        box-shadow: 0 0 16px rgba(255, 0, 0, 0.45);
+    }
+
+    /* === SUMMARY BOX peserta === */
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .summary-box {
+        background: linear-gradient(135deg, rgba(255, 0, 0, 0.25), rgba(255, 0, 0, 0.1));
+        border: 1px solid rgba(255, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 15px 20px;
+        box-shadow: 0 0 12px rgba(255, 0, 0, 0.2);
+        color: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .summary-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    .summary-box h3 {
+        margin: 0 0 8px;
+        color: #ff6666;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .summary-box p {
+        margin: 2px 0;
+        font-size: 14px;
+        color: #ddd;
+    }
+
+    .summary-box .total {
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    /* === BOX SUMMARY CAMPUS TOUR === */
+    .tour-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .tour-box {
+        background: linear-gradient(135deg, rgba(255, 40, 40, 0.22), rgba(255, 0, 0, 0.08));
+        border: 1px solid rgba(255, 0, 0, 0.25);
+        border-radius: 12px;
+        padding: 15px 20px;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+        color: #fff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tour-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
+    }
+
+    .tour-box h3 {
+        margin: 0 0 8px;
+        color: #ff5c5c;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .tour-box p {
+        margin: 2px 0;
+        font-size: 14px;
+        color: #ddd;
+    }
+
+    .tour-box .total {
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+    }
+

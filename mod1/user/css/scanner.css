@@ -1,0 +1,134 @@
+/* === FRAME SCANNER === */
+#reader {
+    width: 100%;
+    max-width: 480px;
+    margin: 25px auto;
+    border: 2px solid rgba(255, 70, 70, 0.8);
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.55);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+    position: relative;
+    backdrop-filter: blur(4px);
+}
+
+/* Scanner Box Dark Overlay */
+#reader__scan_region {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Camera video fill */
+#reader video {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px;
+}
+html[data-camera="back"] #reader video {
+    transform: none;
+}
+
+/* Remove default dashboard */
+#reader__dashboard_section_csr button {
+    display: none !important;
+}
+
+/* === SCAN LASER === */
+.scan-laser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff3366, transparent);
+    animation: scanMove 2.2s linear infinite;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px #ff3366);
+}
+@keyframes scanMove {
+    0% { top: 0; }
+    50% { top: calc(100% - 4px); }
+    100% { top: 0; }
+}
+
+/* === LOADING TEXT === */
+#loading {
+    text-align: center;
+    color: #ffc868;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 18px;
+    text-shadow: 0 0 5px rgba(255, 205, 100, 0.6);
+}
+
+/* === START BUTTON === */
+#startScanBtn {
+    display: block;
+    margin: 28px auto 10px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.25s;
+    box-shadow: 0 0 15px rgba(255, 88, 88, 0.4);
+}
+#startScanBtn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(255, 88, 88, 0.6);
+}
+
+/* === RESULT TEXT === */
+#result-container {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.15rem;
+    color: #ffecec;
+    font-weight: 500;
+}
+#result-container p {
+    opacity: 0.85;
+}
+#result {
+    margin-top: 8px;
+    font-size: 1.25rem;
+    color: #ff7788;
+    text-shadow: 0 0 10px rgba(255, 80, 80, 0.7);
+}
+
+/* Kamera depan mirroring */
+:root[data-camera="front"] #reader video {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+
+/* Kamera belakang normal */
+:root[data-camera="back"] #reader video {
+    transform: none;
+}
+
+/* === SWITCH CAMERA BUTTON === */
+#switchCamBtn {
+    display: none;
+    margin: 12px auto 0 auto;
+    padding: 12px 26px;
+    width: 200px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 88, 88, 0.4);
+}
+
+
+#switchCamBtn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(255, 88, 88, 0.6);
+}

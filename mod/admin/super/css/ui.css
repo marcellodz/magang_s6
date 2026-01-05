@@ -1,0 +1,189 @@
+/* === MODAL === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 40px 45px;
+  width: 440px;
+  animation: slideUp 0.4s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  font-family: "Orbitron", sans-serif;
+  color: #ff3b3b;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.btn-close {
+  background: transparent;
+  color: #ff5c5c;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-close:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* === TOAST === */
+.toast-container {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.toast {
+  min-width: 260px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'Rajdhani', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.success {
+  background: rgba(0, 255, 100, 0.1);
+  border-color: rgba(0, 255, 100, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
+}
+
+.toast.error {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.toast.warning {
+  background: rgba(255, 180, 0, 0.1);
+  border-color: rgba(255, 180, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.3);
+}
+
+/* === POPUP === */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 25px 30px;
+  width: 340px;
+  text-align: center;
+  animation: popIn 0.4s ease;
+}
+
+.popup h3 {
+  color: #ff3b3b;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.popup-buttons button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.popup-buttons .confirm {
+  background: #ff3b3b;
+  border: none;
+  color: #fff;
+}
+
+.popup-buttons .cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.popup-buttons .confirm:hover {
+  background: #ff5555;
+}
+
+.popup-buttons .cancel:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

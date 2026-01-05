@@ -1,0 +1,36 @@
+# =======================================
+# Open House Telkom University (Local Dev)
+# Config by Orion for Marcell 🚀
+# =======================================
+
+# Aktifkan URL rewriting
+Options +FollowSymLinks
+RewriteEngine On
+
+# Base URL project (HARUS sesuai nama folder project)
+RewriteBase /openhouse.smbbtelkom.ac.id/
+
+# 1️⃣ IZINKAN FILE & FOLDER ASLI
+# Jadi semua file/folder nyata (php, css, js, images, mod/, dll) tetap bisa diakses
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 2️⃣ BUAT URL TANPA .php (opsional tapi keren)
+# Contoh: /login -> login.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# 3️⃣ SUPPORT FOLDER "mod/"
+# Jadi URL seperti /mod/logout atau /mod/logout.php tetap bisa jalan
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^mod/([^/]+)/?$ mod/$1.php [L]
+
+# 4️⃣ IGNORE ANCHOR (#)
+RewriteCond %{THE_REQUEST} \x23
+RewriteRule ^ - [L]
+
+# 5️⃣ CUSTOM 404 PAGE (kalau ada)
+ErrorDocument 404 /openhouse.smbbtelkom.ac.id/404.html

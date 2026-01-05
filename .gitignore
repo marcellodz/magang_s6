@@ -1,0 +1,7 @@
+koneksi.php
+.env
+phpqrcode/*.png
+tmp/
+logs/
+.vscode/
+.idea/
